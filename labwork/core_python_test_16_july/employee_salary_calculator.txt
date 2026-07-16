@@ -1,0 +1,20 @@
+def calculate_hra(basic):
+    return basic * 0.20
+
+def calculate_da(basic):
+    return basic * 0.10
+
+def calculate_tax(gross):
+    return gross * 0.08
+
+def calculate_net_salary(basic):
+    hra = calculate_hra(basic)
+    da = calculate_da(basic)
+    gross = basic + hra + da
+    tax = calculate_tax(gross)
+    net = gross - tax
+    return basic, hra, da, gross, tax, net
+
+basic = float(input("Enter Basic Salary: "))
+b, hra, da, gross, tax, net = calculate_net_salary(basic)
+print("Basic:", b, "HRA:", hra, "DA:", da, "Gross:", gross, "Tax:", tax, "Net:", net)

@@ -1,0 +1,9 @@
+students = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O")
+
+print("Total:", len(students))
+print("First 5:", students[:5])
+print("Last 5:", students[-5:])
+name = input("Enter name to search: ")
+print("Found:", name in students)
+print("Occurrences:", students.count(name))
+print("Sorted List:", sorted(list(students)))

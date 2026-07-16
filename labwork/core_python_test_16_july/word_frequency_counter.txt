@@ -1,0 +1,15 @@
+import string
+def word_frequency(sentence):
+    for p in string.punctuation:
+        sentence = sentence.replace(p,"")
+    words = sentence.lower().split()
+    freq = {}
+    for w in words:
+        freq[w] = freq.get(w,0)+1
+    for w in sorted(freq):
+        print(w,":",freq[w])
+    most = max(freq, key=freq.get)
+    print("Most Repeated:", most)
+
+sentence = input("Enter sentence: ")
+word_frequency(sentence)

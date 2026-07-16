@@ -1,0 +1,13 @@
+secret = 57
+attempts = 0
+
+for i in range(7):
+    num = int(input("Guess the number: "))
+    if num < 0:
+        continue   # ignore negative
+    attempts += 1
+    if num == secret:
+        print("Correct! Attempts used:", attempts)
+        break
+else:
+    print("Out of attempts! Attempts used:", attempts)

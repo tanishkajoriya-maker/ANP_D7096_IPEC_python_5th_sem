@@ -1,0 +1,18 @@
+units = int(input("Enter total units consumed: "))
+bill = 0
+
+if units <= 100:
+    bill = units * 5
+elif units <= 200:
+    bill = (100 * 5) + (units - 100) * 7
+else:
+    bill = (100 * 5) + (100 * 7) + (units - 200) * 10
+
+# Validation
+if bill > 2000:
+    bill += bill * 0.05   # 5% surcharge
+if bill < 500:
+    bill = 500            # Minimum bill
+
+print("Total Units:", units)
+print("Bill Amount:", bill)

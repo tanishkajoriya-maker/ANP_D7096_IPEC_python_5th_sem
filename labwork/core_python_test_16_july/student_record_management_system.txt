@@ -1,0 +1,62 @@
+students = []
+
+def add_student():
+    roll = int(input("Roll No: "))
+    for s in students:
+        if s["roll"] == roll:
+            print("Duplicate Roll Number!")
+            return
+    name = input("Name: ")
+    age = int(input("Age: "))
+    course = input("Course: ")
+    marks = int(input("Marks: "))
+    students.append({"roll":roll,"name":name,"age":age,"course":course,"marks":marks})
+
+def display_all():
+    for s in students: print(s)
+
+def search_student():
+    roll = int(input("Enter Roll No: "))
+    for s in students:
+        if s["roll"] == roll: print(s); return
+    print("Not Found")
+
+def update_marks():
+    roll = int(input("Roll No: "))
+    for s in students:
+        if s["roll"] == roll:
+            s["marks"] = int(input("New Marks: "))
+            return
+    print("Not Found")
+
+def delete_student():
+    roll = int(input("Roll No: "))
+    for s in students:
+        if s["roll"] == roll:
+            students.remove(s)
+            return
+    print("Not Found")
+
+def topper():
+    top = max(students, key=lambda x:x["marks"])
+    print("Topper:", top)
+
+def average_marks():
+    avg = sum(s["marks"] for s in students)/len(students)
+    print("Average:", avg)
+
+def above_avg():
+    avg = sum(s["marks"] for s in students)/len(students)
+    print([s for s in students if s["marks"] > avg])
+
+while True:
+    print("\n1.Add 2.Display 3.Search 4.Update 5.Delete 6.Topper 7.Average 8.Above Avg 9.Exit")
+    choice = int(input("Enter choice: "))
+    if choice==1: add_student()
+    elif choice==2: display_all()
+    elif choice==3: search_student()
+    elif choice==4: update_marks()
+    elif choice==5: delete_student()
+    elif choice==6: topper()
+    elif choice==7: average_marks()
+    elif choice==8
