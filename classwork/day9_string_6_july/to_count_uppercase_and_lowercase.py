@@ -1,4 +1,4 @@
-# Program to count uppercase and lowercase letters in a string
+ #Program to count uppercase and lowercase letters in a string
 '''Problem Statement: Write a program to count the uppercase characters as well as lowercase characters is given sentence, without using library function.'''
 #-------------------------------------------------coding----------------------------------------------------------
 sentence = input("Enter a sentence: ")
